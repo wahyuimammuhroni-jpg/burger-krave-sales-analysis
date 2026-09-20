@@ -211,4 +211,192 @@ Executive KPIs
 | Total Profit    | 16,195,231,700 |
 | Profit Margin   |         57.30% |
 
-![Dashboard Overview](images/01.dashboard_overview.png)
+![Dashboard Overview](images/01_dashboard_overview.png)
+
+---
+
+## Sales Performance Analysis
+
+Monthly revenue showed an overall upward trend throughout 2024.
+
+Revenue increased from approximately 1.86 billion in January to approximately 4.12 billion in December.
+
+Product sales volume also increased toward the end of the year, reaching approximately 128K units in December.
+
+Branch Location Performance
+
+Sales activity was concentrated across three primary locations:
+
+- Jakarta
+- Surabaya
+- Bandung
+
+Jakarta represented the largest share of sales activity among the analyzed branch locations.
+
+![Sales Performance](images/02_sales_performance.png)
+
+---
+
+## Product & Branch Performance
+
+### Product Performance
+
+Whopper generated the highest revenue among the analyzed Burger Krave products at approximately 3.99 billion.
+
+Other major revenue contributors included:
+
+- Big King
+- Chicken Royale
+- Crispy Chicken
+- Whopper Cheese
+
+This indicates that a relatively small group of products contributes a significant share of overall product revenue.
+
+### Branch Performance
+
+Mall Taman Anggrek recorded the highest branch revenue at approximately 2.72 billion.
+
+Other leading branches included:
+
+- Mall Kelapa Gading
+- Grand Indonesia
+- Senayan City
+- Plaza Indonesia
+- Central Park Mall
+- Kota Kasablanka
+
+These branches represent important contributors to Burger Krave's overall sales performance.
+
+![Product & Branch Performance](images/03_product_and_branch_performance.png)
+
+---
+
+## Customer Analysis
+
+Customer analysis was conducted from both gender and age perspectives.
+
+### Burger Preference by Gender
+
+Burger preferences were relatively balanced between male and female customers across several leading products, including:
+
+- Whopper
+- Chicken Royale
+- Big King
+- Crispy Chicken
+- Long Chicken
+
+## Customer Segmentation by Age
+
+Customers were grouped into:
+
+- Under 20
+- 20–29
+- 30–39
+- 40–49
+- 50+
+
+The 50+ segment represents the largest age group in the customer segmentation analysis.
+
+Gender distribution within the age groups also appears relatively balanced.
+
+![Customer Analysis](images/04_customer_segmentation.png)
+
+---
+
+## Three-Month Revenue Forecast
+
+A three-month revenue forecast was created using historical monthly revenue patterns to estimate potential performance for:
+
+- January 2025
+- February 2025
+- March 2025
+
+The forecast visualization includes:
+
+- Historical values
+- Forecast values
+- Lower confidence bound
+- Upper confidence bound
+
+The inclusion of confidence bounds highlights the uncertainty associated with future revenue estimates.
+
+Forecast values are estimates based on historical patterns and should not be interpreted as guaranteed future results.
+
+![Three-Month Revenue Forecast](images/07_three_month_revenue_forecast.png)
+
+---
+
+## Key Insights
+
+- Burger Krave generated approximately 28.26 billion in total revenue during the analyzed period.
+- Total profit reached approximately 16.20 billion, with a 57.30% profit margin.
+- Revenue demonstrated an overall upward trend throughout 2024.
+- December recorded the highest monthly revenue at approximately 4.12 billion.
+- Whopper was the highest revenue-generating burger product.
+- Mall Taman Anggrek was the highest revenue-generating branch.
+- Jakarta represented the largest share of sales activity among the analyzed locations.
+- Customer burger preferences were relatively balanced between male and female customers.
+- The 50+ age segment represented the largest customer segment.
+- Historical revenue trends support a positive short-term revenue outlook, although forecast values remain subject to uncertainty.
+
+---
+
+## Business Recommendations
+
+1. Maintain High-Performing Product Availability
+
+High-revenue products such as Whopper, Big King, and Chicken Royale should receive strong inventory and availability support.
+
+Product performance can also be used to prioritize promotional campaigns and menu placement.
+
+2. Use High-Performing Branches as Benchmarks
+
+Branches such as Mall Taman Anggrek, Mall Kelapa Gading, and Grand Indonesia can be studied as performance benchmarks.
+
+Operational or commercial practices from stronger branches may provide useful insights for lower-performing locations.
+
+3. Prepare Capacity for High-Demand Periods
+
+The increase in revenue and product sales toward the end of the year indicates the importance of preparing:
+
+- Inventory
+- Staffing
+- Production capacity
+- Operational resources
+
+for periods of stronger demand.
+
+4. Develop Customer-Based Marketing Strategies
+
+Customer segmentation by age and gender can support more targeted promotional strategies.
+
+The relatively large 50+ customer segment may represent an opportunity for more tailored product communication or loyalty initiatives.
+
+5. Monitor Revenue Forecast Against Actual Performance
+
+Forecast results should be compared with actual revenue each month.
+
+Updating the forecast as new transaction data becomes available can improve future planning and help management respond to changing sales patterns.
+
+---
+
+## Project Structure
+
+```text
+burger-krave-sales-analysis/
+│
+├── README.md
+│
+├── excel/
+│   ├── README.md
+│   └── burger_krave_sales_analysis.xlsx
+│
+└── images/
+    ├── README.md
+    ├── 01_dashboard_overview.png
+    ├── 02_sales_performance.png
+    ├── 03_product_and_branch_performance.png
+    ├── 04_customer_segmentation.png
+    ├── 05_power_query_data_preparation.png
+    ├── 06_three_month_revenue_forecast.png
+    └── 07_data_modeling.png
