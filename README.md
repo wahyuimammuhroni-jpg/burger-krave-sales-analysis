@@ -75,4 +75,140 @@ Interactive Dashboard
     ↓
 Business Insights
     ↓
-Three-Month Revenue Forecast
+Three-Month Revenue Forecast```
+```
+
+---
+
+## Data Preparation with Power Query
+
+Power Query was used to prepare and standardize the datasets before analysis.
+
+The preparation process included:
+
+- Standardizing column names
+- Assigning appropriate data types
+- Validating missing and error values
+- Preparing primary and foreign keys
+- Structuring transaction and master data
+- Preparing analysis-ready tables
+- Ensuring consistency between related datasets
+
+![Power Query Data Preparation](images/05_power_query_data_preparation.png)
+
+---
+
+## Power Pivot
+
+### Data Modeling
+
+After data preparation, the cleaned tables were loaded into the Power Pivot Data Model.
+
+The model uses transaction_order_detail as the central transaction table connected to three supporting master tables.
+
+Table Relationships
+
+![Power Pivot Data Modeling](images/06_power_pivot_data_modeling.png)
+
+- `master_customer[customer_id]` → `transaction_order_detail[customer_id]`
+- `master_cabang[branch_id]` → `transaction_order_detail[branch_id]`
+- `master_burger[burger_id]` → `transaction_order_detail[burger_id]`
+
+### Measures
+
+Several measures were created in Power Pivot to support KPI calculation and dashboard analysis
+
+| Measure              | Analytical Purpose                                 |
+| -------------------- | -------------------------------------------------- |
+| Revenue Per Trx      | Supports revenue calculation from transaction data |
+| Profit               | Measures overall business profit                   |
+| Customer Count       | Measures the number of customers                   |
+| Profit Margin %      | Evaluates profitability relative to revenue        |
+| Avg Completion Order | Measures average order completion performance      |
+
+### DAX Code
+
+```DAX
+Revenue Per Trx
+
+Revenue Per Trx :=
+SUMX(
+    'transaction_order_detail',
+    'transaction_order_detail'[quantity]
+        * RELATED(master_burger[price])
+)
+--------------------------------------------------------------------------
+
+Profit
+
+Profit :=
+SUMX(
+    transaction_order_detail,
+    (
+        RELATED(master_burger[price])
+        - RELATED(master_burger[production_cost])
+    )
+    * transaction_order_detail[quantity]
+)
+--------------------------------------------------------------------------
+
+Customer Count
+
+Customer Count :=
+DISTINCTCOUNT(
+    transaction_order_detail[customer_id]
+)
+--------------------------------------------------------------------------
+
+Profit Margin %
+
+Profit Margin % :=
+DIVIDE(
+    [Profit],
+    [Revenue Per Trx],
+    0
+)
+--------------------------------------------------------------------------
+
+Avg Completion Order
+
+Avg Completion Order :=
+AVERAGEX(
+    FILTER(
+        transaction_order_detail,
+        NOT(ISBLANK(transaction_order_detail[order_time]))
+            && NOT(ISBLANK(transaction_order_detail[completion_time]))
+    ),
+    MOD(
+        transaction_order_detail[completion_time]
+            - transaction_order_detail[order_time],
+        1
+    ) * 1440
+)```
+```
+
+---
+
+## Dashboard Overview
+
+An interactive Excel dashboard was developed to summarize the main business indicators and provide multiple perspectives on sales performance.
+
+The dashboard includes interactive filters for:
+
+- Transaction Period
+- Burger Category
+- Burger Name
+- Branch Name
+
+Executive KPIs
+
+| KPI             |         Result |
+| --------------- | -------------: |
+| Total Revenue   | 28,263,267,000 |
+| Total Customers |         48,780 |
+| Total Orders    |        500,000 |
+| Total Quantity  |        879,145 |
+| Total Profit    | 16,195,231,700 |
+| Profit Margin   |         57.30% |
+
+![Dashboard Overview](images/01.dashboard_overview.png)
