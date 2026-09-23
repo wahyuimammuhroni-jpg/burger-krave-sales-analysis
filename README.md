@@ -382,7 +382,7 @@ Updating the forecast as new transaction data becomes available can improve futu
 
 ## Skills Demonstrated
 
-Microsoft Excel • Power Query • Power Pivot • Data Cleaning • Data Transformation • Data Modeling • Table Relationships • Measures • PivotTables • PivotCharts • KPI Analysis • Sales Analysis • Product Analysis • Branch Analysis • Customer Segmentation • Dashboard Development • Revenue Forecasting • Business Insights • Data Storytelling
+**Microsoft Excel • Power Query • Power Pivot • Data Cleaning • Data Transformation • Data Modeling • Table Relationships • Measures • PivotTables • PivotCharts • KPI Analysis • Sales Analysis • Product Analysis • Branch Analysis • Customer Segmentation • Dashboard Development • Revenue Forecasting • Business Insights • Data Storytelling**
 
 ---
 
